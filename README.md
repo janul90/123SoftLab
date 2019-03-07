@@ -1,5 +1,5 @@
 # 123softlab qualifing task
-
+## Marcin Janulewicz
 This is our boilerplate repo, a starting point for our react apps. We've added 'counter' feature just to show you our convention of the code. Your goal will be to add 'skywalkers' feature. 
 
 Feature specs:
