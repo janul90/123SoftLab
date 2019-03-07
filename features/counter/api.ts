@@ -1,7 +1,7 @@
-import { get } from 'features/api/api';
-import { SwapiPlanetResponse } from './models';
+import {get} from 'features/api/api';
+import {SwApiSkywalkersResponse} from './models';
 
-export const getCounterFromSwapi = (): Promise<SwapiPlanetResponse> =>
-  get<SwapiPlanetResponse>(
-    'https://swapi.co/api/planets/3/',
-  );
+export const getSkywalkersFromSwapi = (): Promise<SwApiSkywalkersResponse> =>
+    get<SwApiSkywalkersResponse>(
+        'https://swapi.co/api/people/?search=Skywalker&format=json',
+    );
