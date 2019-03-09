@@ -47,7 +47,7 @@ class Counter extends PureComponent<Props> {
     return (
       <React.Fragment>
         <Typography variant="h2" align={'center'} className={classes.textColor}>
-          Skywalkers: {skywalkers.count}
+          Skywalkers: {skywalkers.results.length}
         </Typography>
         <Table className={classes.table}>
           <TableHead>
@@ -63,26 +63,28 @@ class Counter extends PureComponent<Props> {
               <TableCell>Action</TableCell>
             </TableRow>
           </TableHead>
+          <TableBody>
           {skywalkers.results.map((skywalker: Skywalker, index: number) => (
-            <TableBody>
-              <TableCell>{skywalker.name}</TableCell>
-              <TableCell>{skywalker.height}</TableCell>
-              <TableCell>{skywalker.mass}</TableCell>
-              <TableCell>{skywalker.hair_color}</TableCell>
-              <TableCell>{skywalker.skin_color}</TableCell>
-              <TableCell>{skywalker.eye_color}</TableCell>
-              <TableCell>{skywalker.birth_year}</TableCell>
-              <TableCell>{skywalker.gender}</TableCell>
-              <TableCell>
-                <Button
-                  variant="contained"
-                  color="secondary"
-                  onClick={() => this.props.onKillSkywaker(index)}
-                >Kill
-                </Button>
-              </TableCell>
-            </TableBody>
+              <TableRow key={index}>
+                <TableCell>{skywalker.name}</TableCell>
+                <TableCell>{skywalker.height}</TableCell>
+                <TableCell>{skywalker.mass}</TableCell>
+                <TableCell>{skywalker.hair_color}</TableCell>
+                <TableCell>{skywalker.skin_color}</TableCell>
+                <TableCell>{skywalker.eye_color}</TableCell>
+                <TableCell>{skywalker.birth_year}</TableCell>
+                <TableCell>{skywalker.gender}</TableCell>
+                <TableCell>
+                  <Button
+                    variant="contained"
+                    color="secondary"
+                    onClick={() => this.props.onKillSkywaker(index)}
+                  >Kill
+                  </Button>
+                </TableCell>
+              </TableRow>
           ))}
+          </TableBody>
         </Table>
       </React.Fragment>
     );
