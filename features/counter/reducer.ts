@@ -62,5 +62,5 @@ export default function (state: CounterState = initialState, action: RootAction)
 
 function removeSkywalker(skywalkers: SwApiSkywalkersResponse, index: number): SwApiSkywalkersResponse {
   skywalkers.results.splice(index, 1);
-  return skywalkers;
+  return {...skywalkers};
 }
